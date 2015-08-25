@@ -73,7 +73,7 @@ Once that is done you can use SQLite in the followig manner.
 # Going by example
 
 ### Pre requisites
-```
+``` sql
 CREATE TABLE "user" (
 	`name`	TEXT,
 	`email`	TEXT,
@@ -84,7 +84,7 @@ CREATE TABLE "user" (
 ```
 
 With the following initial records:
-```
+``` sql
 INSERT INTO user(name, email, data, height) values ('user 1', 'user1@email.com', null, 1.4);
 INSERT INTO user(name, email, data, height) values ('user 2', 'user2@email.com', null, null);
 INSERT INTO user(name, email, data, height) values ('user 3', 'user3@email.com', null, 4.89);
@@ -186,7 +186,7 @@ after address creation/population
 pk: 1, email: user1@email.com, name: user 1, blob data: , height: 1.4
  address: 123 main str, walnut creek, ca
 ```
-The above code gives identical output after being converted into iOS using j2objc. Therefore, you can implement your database related logics in java language amd just convert it into iOS.
+The above code gives identical output after being converted into iOS using j2objc. Therefore, you can implement your database related logics in java language amd just convert/reuse it in iOS.
 
 
 
