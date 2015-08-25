@@ -6,9 +6,11 @@ Note: I'm in the progress of initial repository creation / documenting.
 
 # Overview
 
-This implementation is based on standard Android's SQlite implementation that is being used on Android devices, and matching implementation on iOS devices.
+This implementation is based on standard Android's SQlite implementation that is being used on Android devices, and matching implementation on iOS device.
 
-Both implemengtations conform to SQLighterDb and SQLighterRs interfaces. Functionality does not replicate Android's implementation completely. It provides ability to execute pretty much any SQL statements.
+Both implementations conform to SQLighterDb (core database methods) and SQLighterRs (ResultSet processing) interfaces. 
+
+This library does not attempt to replicate Android's implementation completely. The goal is to provide ability to execute pretty much any SQL statements at either of the platforms with single interface without dependencies on existing platform specific implementations.
 
 # Going by example
 
@@ -92,7 +94,7 @@ pk: 3, email: user3@email.com, name: user 3, blob data: , height: 4.89
 pk: 4, email: user@email.com, name: user 4, blob data: , height: null
 pk: 5, email: user@email.com, name: user name 5, blob data: This is blob string example, height: 5.67
 ```
-Let's delete somethin=g
+Let's delete something
 ``` java
 db.addParam("user@email.com");
 db.executeChange("delete from user where email = ?");
