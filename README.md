@@ -188,6 +188,18 @@ pk: 1, email: user1@email.com, name: user 1, blob data: , height: 1.4
 ```
 The above code gives identical output after being converted into iOS using j2objc. Therefore, you can implement your database related logics in java language amd just convert/reuse it in iOS.
 
+If for whatever reason you have to code some SQLITE in iOS without j2objc, it doesn't look bad either:
+``` objc
+id<SQLighterDb> db = [[Bootstrap getInstance] getDb];
+[db addParamWithNSString: @"user@email.com"];
+id<SQLighterRs> rs = [db executeWithNSString: @"select name, email from user where email = ?"];
+while([rs hasNext]) {
+	NSLog(@"email:  %@, name: %@", [rs getStringWithInt:1], [rs getStringWithInt:0]);
+}
+[rs close];
+
+```
+
 
 
 
